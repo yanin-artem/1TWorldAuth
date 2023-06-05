@@ -24,6 +24,7 @@
 <script setup>
 import { ref } from "vue"
 import useValidators from "src/use/validators"
+import { authentication } from "src/sdk/authentication";
 
 const { required } = useValidators();
 
@@ -33,7 +34,7 @@ const form = ref({
 })
 
 const Submit = () => {
-  console.log(form.value)
+  authentication(form.value)
 }
 
 </script>

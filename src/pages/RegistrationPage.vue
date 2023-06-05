@@ -63,8 +63,8 @@
 <script setup>
 import { ref } from "vue"
 import useValidators from "src/use/validators"
+import { registration } from "src/sdk/registration"
 import { useRouter } from "vue-router";
-import { route } from "quasar/wrappers";
 
 const { required, equal, passwordValid } = useValidators();
 const router = useRouter()
@@ -80,7 +80,7 @@ const form = ref({
 })
 
 const Submit = () => {
-  console.log(form.value)
+  registration(form.value)
   router.push({ name: "authentication" })
 }
 
